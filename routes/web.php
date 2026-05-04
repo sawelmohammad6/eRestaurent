@@ -1,11 +1,18 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 
 Route::get('/', [HomeController::class, 'my_home']);
 
 Route::get('/home', [HomeController::class, 'index']);
+
+
+Route::get('/add_food', [AdminController::class, 'add_food']);
+Route::post('/upload_food', [AdminController::class, 'upload_food']);
+
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
