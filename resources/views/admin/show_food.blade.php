@@ -53,7 +53,13 @@ Food Title
             <td>{{ $data->details }}</td>
             <td>${{ $data->price }}</td>
             <td><img src="{{ asset('food_img/' . $data->image) }}" alt="{{ $data->title }}" width="100"></td>
-            <td><a href="{{ route('admin.delete_food', $data->id) }}" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this food item?')">Delete</a></td>
+            <td>
+                
+            <a href="{{ route('admin.delete_food', $data->id) }}" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this food item?')">Delete</a>
+        </td>
+        <td>
+            <a class="btn btn-warning" href="{{ url('update_food', $data->id) }}">Update</a>
+        </td>
         </tr>
         @endforeach
         </tr>
